@@ -18,6 +18,14 @@
     .links a { display: inline-block; margin: 0 8px; padding: 8px 14px; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 500; }
     .links a:hover { background: #1e40af; }
     footer { text-align:center; font-size:.9rem; margin-top:3rem; color:#555; }
+    a.no-underline {
+      text-decoration: none;
+      color: #2563eb;       /* blu coerente con il resto */
+      font-weight: 500;
+    }
+    a.no-underline:hover {
+      text-decoration: underline; /* opzionale: appaiono sottolineati solo al passaggio del mouse */
+    }
   </style>
 </head>
 <body>
@@ -27,8 +35,8 @@
     <div>
       <h1>Andrea Panebianco</h1>
       <p>Ph.D. Student in Information and Communication Technologies<br>
-        <a href="https://www.unipa.it/dipartimenti/ingegneria/en/index.html" target="_blank">Dept. of Engineering</a>,
-        <a href="https://www.unipa.it/mobilita/en/" target="_blank">University of Palermo</a>
+        <a href="https://www.unipa.it/dipartimenti/ingegneria/en/index.html" target="_blank" class="no-underline">Dept. of Engineering</a>, 
+        <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="no-underline">University of Palermo</a>
       </p>
       <nav>
         <a href="publications.html">Publications</a>
