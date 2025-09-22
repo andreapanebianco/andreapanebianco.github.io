@@ -3,26 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andrea Panebianco — Publications</title>
-  <style>
+  <title>Andrea Panebianco — Homepage</title>
+  <style>  
     body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; background:#f9fafb; color:#111; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; text-align:center; }
+    header { display: flex; align-items: center; gap: 20px; margin-bottom: 2rem; }
+    header img { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; border: 2px solid #ddd; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.3rem 0; }
     h2 { margin-top: 2rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.3rem; }
-    p, li { margin: 0.4rem 0; }
-    nav { text-align:center; margin-bottom: 2rem; }
+    p { margin: 0.6rem 0; }
+    nav { margin-top: 0.5rem; }
     nav a { margin-right: 15px; padding: 6px 12px; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 500; }
     nav a:hover { background: #1e40af; }
-    ul { padding-left: 1.2rem; }
+    .links { text-align: center; margin-top: 2rem; }
+    .links a { display: inline-block; margin: 0 8px; padding: 8px 14px; background: #2563eb; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 500; }
+    .links a:hover { background: #1e40af; }
     footer { text-align:center; font-size:.9rem; margin-top:3rem; color:#555; }
+    a.no-underline {
+      text-decoration: none;
+      color: #2563eb;       /* blu coerente con il resto */
+      font-weight: 500;
+    }
+    a.no-underline:hover {
+      text-decoration: underline; /* opzionale: appaiono sottolineati solo al passaggio del mouse */
+    }
   </style>
 </head>
 <body>
+  <!-- Header con foto, nome e navigazione -->
+  <header>
+    <img src="me.jpg" alt="Andrea Panebianco">
+    <div>
+      <h1>Andrea Panebianco</h1>
+      <p>Ph.D. Student in Information and Communication Technologies<br>
+        <a href="https://www.unipa.it/dipartimenti/ingegneria/en/index.html" target="_blank" class="no-underline">Dept. of Engineering</a>, 
+        <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="no-underline">University of Palermo</a>
+      </p>
+      <nav>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
   <!-- Header -->
   <header>
-    <h1>
-      Publications<br>
-      <span style="font-size:1.5rem; font-weight:400;">Andrea Panebianco</span>
-    </h1>
+    <h2>
+      Publications
+    </h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="cv.html">CV</a>
