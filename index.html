@@ -26,9 +26,59 @@
     a.no-underline:hover {
       text-decoration: underline; /* opzionale: appaiono sottolineati solo al passaggio del mouse */
     }
+    
+/* --- MOBILE TWEAKS --- */
+@media (max-width: 600px) {
+  body { padding: 1.2rem; }
+
+  /* Header impilato e centrato */
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  header img {
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+  }
+  h1 { font-size: 1.6rem; margin: 0; }
+  h2 { font-size: 1.1rem; }
+
+  /* Pulsanti navigazione più comodi al tap */
+  nav { margin-top: .25rem; }
+  nav a {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+
+  /* Link social in fondo */
+  .links { margin-top: 1.2rem; }
+  .links a {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+
+  /* Testo più leggibile */
+  p, li { font-size: 0.98rem; line-height: 1.6; }
+
+  /* Evita righe troppo lunghe (es. indirizzi) */
+  #contact p, a { overflow-wrap: anywhere; }
+
+  /* Footer più compatto */
+  footer { margin-top: 2rem; font-size: .85rem; }
+}
+
+    
   </style>
 </head>
 <body>
+  
   <!-- Header con foto, nome e navigazione -->
   <header>
     <img src="me.jpg" alt="Andrea Panebianco">
