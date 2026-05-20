@@ -50,23 +50,7 @@
             z-index: 1000;
         }
 
-        .navbar-logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-right: 30px;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-main {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .navbar a:not(.navbar-logo) {
+        .navbar a {
             color: var(--text-muted);
             text-decoration: none;
             padding: 8px 16px;
@@ -75,14 +59,15 @@
             transition: all 0.2s ease;
         }
 
-        .navbar a:not(.navbar-logo):hover {
+        .navbar a:hover {
             background-color: #edf2f7;
             color: var(--accent-color);
         }
 
         .nav-right {
-            margin-left: auto;
+            margin-left: auto; /* Spinge i link tutto a destra */
             display: flex;
+            gap: 10px;
         }
 
         /* Layout & Cards */
@@ -111,7 +96,7 @@
 
         .btn-primary {
             background-color: var(--accent-color);
-            color: #fff;
+            color: #fff !important;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
@@ -214,19 +199,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
-                flex-direction: column;
                 padding: 15px;
             }
-            .navbar-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            .nav-main {
-                display: none; /* Nasconde le scorciatoie interne su mobile per pulizia */
-            }
             .nav-right {
-                margin-left: 0;
-                margin-top: 10px;
+                margin: 0 auto; /* Centra i link su mobile */
                 width: 100%;
                 justify-content: center;
             }
@@ -257,15 +233,6 @@
 
     <!-- Navigazione Top -->
     <nav class="navbar">
-        <a href="index.html" class="navbar-logo">Andrea Panebianco</a>
-        
-        <!-- Scorciatoie -->
-        <div class="nav-main">
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#activities">Activities</a>
-        </div>
-
         <div class="nav-right">
             <a href="index.html" style="color: var(--primary-color); font-weight: 600;">Home</a>
             <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
