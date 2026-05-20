@@ -50,7 +50,15 @@
             z-index: 1000;
         }
 
-        .navbar a {
+        .navbar-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar a:not(.navbar-logo) {
             color: var(--text-muted);
             text-decoration: none;
             padding: 8px 16px;
@@ -59,15 +67,16 @@
             transition: all 0.2s ease;
         }
 
-        .navbar a:hover {
+        .navbar a:not(.navbar-logo):hover {
             background-color: #edf2f7;
             color: var(--accent-color);
         }
 
         .nav-right {
-            margin-left: auto; /* Spinge i link tutto a destra */
+            margin-left: auto;
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         /* Layout & Cards */
@@ -96,7 +105,7 @@
 
         .btn-primary {
             background-color: var(--accent-color);
-            color: #fff !important;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
@@ -199,10 +208,14 @@
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
+                flex-direction: column;
                 padding: 15px;
             }
+            .navbar-logo {
+                margin-bottom: 15px;
+            }
             .nav-right {
-                margin: 0 auto; /* Centra i link su mobile */
+                margin-left: 0;
                 width: 100%;
                 justify-content: center;
             }
@@ -233,6 +246,8 @@
 
     <!-- Navigazione Top -->
     <nav class="navbar">
+        <a href="index.html" class="navbar-logo">Andrea Panebianco</a>
+        
         <div class="nav-right">
             <a href="index.html" style="color: var(--primary-color); font-weight: 600;">Home</a>
             <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
