@@ -189,7 +189,6 @@
             }
             .nav-main {
                 justify-content: center;
-                display: none; /* Su mobile nascondiamo i link #about della home per non creare confusione */
             }
             .nav-right {
                 margin-left: 0;
@@ -212,11 +211,10 @@
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Andrea Panebianco</a>
         
-        <!-- Link alla Home -->
+        <!-- Scorciatoie per le sezioni di questa pagina -->
         <div class="nav-main">
-            <a href="index.html#about">About</a>
-            <a href="index.html#research">Research</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="#journal">Journal Papers</a>
+            <a href="#conference">Conference Papers</a>
         </div>
 
         <div class="nav-right">
@@ -233,7 +231,7 @@
         </div>
 
         <!-- Journal Articles -->
-        <section class="card">
+        <section id="journal" class="card">
             <h2 class="section-title">Journal Papers</h2>
             <ul class="pub-list">
                 <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025). 
@@ -276,7 +274,7 @@
         </section>
 
         <!-- Conference Papers -->
-        <section class="card">
+        <section id="conference" class="card">
             <h2 class="section-title">Conference Papers</h2>
             <ul class="pub-list">
                 <li>Busacca, F., <strong>Panebianco, A.</strong>, Sun Y. (2026, March). 
