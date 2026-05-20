@@ -55,15 +55,7 @@
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
-            margin-right: 30px;
             letter-spacing: -0.5px;
-        }
-
-        .nav-main {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
         }
 
         .navbar a:not(.navbar-logo) {
@@ -83,6 +75,8 @@
         .nav-right {
             margin-left: auto;
             display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         /* Layout & Cards */
@@ -127,7 +121,6 @@
         }
 
         p {
-            text-align: justify;
             margin-bottom: 1.2em;
             color: var(--text-muted);
         }
@@ -213,15 +206,10 @@
                 padding: 15px;
             }
             .navbar-logo {
-                margin-right: 0;
                 margin-bottom: 15px;
-            }
-            .nav-main {
-                justify-content: center;
             }
             .nav-right {
                 margin-left: 0;
-                margin-top: 10px;
                 width: 100%;
                 justify-content: center;
             }
@@ -232,9 +220,6 @@
             }
             .profile-name {
                 font-size: 2rem;
-            }
-            p {
-                text-align: left; /* Su mobile il giustificato è spesso illeggibile */
             }
             .card {
                 padding: 25px;
@@ -249,15 +234,10 @@
 
     <!-- Navigazione Top -->
     <nav class="navbar">
-        <a href="#" class="navbar-logo">Andrea Panebianco</a>
-        
-        <div class="nav-main">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="index.html" class="navbar-logo">Andrea Panebianco</a>
 
         <div class="nav-right">
+            <a href="index.html" style="color: var(--accent-color); font-weight: 700;">Home</a>
             <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
             <a href="cv.html" style="color: var(--primary-color); font-weight: 600;">CV</a>
         </div>
