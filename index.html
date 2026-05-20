@@ -1,236 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andrea Panebianco — Homepage</title>
-  <style>  
-    /* Variabili CSS per mantenere coerenza nei colori */
-    :root {
-      --bg-color: #f8fafc;
-      --text-main: #334155;
-      --text-heading: #0f172a;
-      --accent-color: #0256a4; /* Tonalità di blu più istituzionale, vicina a quella di Auburn */
-      --accent-hover: #013d75;
-      --border-color: #e2e8f0;
-      --card-bg: #ffffff;
-    }
-
-    body { 
-      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-      max-width: 820px; 
-      margin: 0 auto; 
-      padding: 3rem 2rem; 
-      background: var(--bg-color); 
-      color: var(--text-main); 
-      line-height: 1.65;
-    }
-
-    /* Header */
-    header { 
-      display: flex; 
-      align-items: center; 
-      gap: 32px; 
-      margin-bottom: 3rem; 
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border-color);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Panebianco — Homepage</title>
     
-    header img { 
-      width: 150px; 
-      height: 150px; 
-      object-fit: cover; 
-      border-radius: 16px; 
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    h1 { 
-      font-size: 2.4rem; 
-      margin: 0 0 0.4rem 0; 
-      color: var(--text-heading);
-      letter-spacing: -0.02em;
-    }
+    <style>
+        :root {
+            --primary-color: #1a365d; 
+            --accent-color: #2b6cb0;
+            --text-color: #2d3748;
+            --text-muted: #4a5568;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+        }
 
-    h2 { 
-      font-size: 1.5rem;
-      margin-top: 2.5rem; 
-      margin-bottom: 1rem;
-      color: var(--text-heading);
-      border-bottom: 2px solid var(--border-color); 
-      padding-bottom: 0.5rem; 
-    }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; 
+        }
 
-    p { margin: 0.8rem 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    /* Navigazione */
-    nav { margin-top: 1rem; }
-    nav a { 
-      display: inline-block;
-      margin-right: 12px; 
-      padding: 8px 16px; 
-      background: var(--card-bg); 
-      color: var(--text-heading); 
-      border: 1px solid var(--border-color);
-      border-radius: 8px; 
-      text-decoration: none; 
-      font-weight: 500; 
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    }
-    nav a:hover { 
-      background: var(--accent-color);
-      border-color: var(--accent-color);
-      color: #fff; 
-      transform: translateY(-1px);
-      box-shadow: 0 4px 6px rgba(2, 86, 164, 0.15);
-    }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: var(--nav-bg);
+            padding: 15px 30px;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Link in linea */
-    a.no-underline {
-      text-decoration: none;
-      color: var(--accent-color);
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    a.no-underline:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      color: var(--accent-hover);
-    }
+        .navbar-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 30px;
+            letter-spacing: -0.5px;
+        }
 
-    /* Liste */
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-    /* Link Social/Accademici in fondo */
-    .links { 
-      display: flex;
-      gap: 12px;
-      margin-top: 3rem; 
-    }
-    .links a { 
-      flex: 1;
-      text-align: center;
-      padding: 12px 20px; 
-      background: var(--accent-color); 
-      color: #fff; 
-      border-radius: 8px; 
-      text-decoration: none; 
-      font-weight: 500; 
-      transition: all 0.2s ease;
-    }
-    .links a:hover { 
-      background: var(--accent-hover); 
-      box-shadow: 0 4px 12px rgba(2, 86, 164, 0.2);
-    }
+        .navbar a:not(.navbar-logo) {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
 
-    /* Footer */
-    footer { 
-      text-align: center; 
-      font-size: 0.9rem; 
-      margin-top: 4rem; 
-      padding-top: 2rem;
-      color: #64748b; 
-    }
-    
-    /* --- MOBILE TWEAKS --- */
-    @media (max-width: 650px) {
-      body { padding: 2rem 1.5rem; }
+        .navbar a:not(.navbar-logo):hover {
+            background-color: #edf2f7;
+            color: var(--accent-color);
+        }
 
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        gap: 20px;
-      }
-      
-      header img {
-        width: 120px;
-        height: 120px;
-      }
+        .nav-right {
+            margin-left: auto;
+            display: flex;
+        }
 
-      h1 { font-size: 2rem; }
-      
-      nav a {
-        margin: 0 8px 8px 0;
-      }
+        /* Layout & Cards */
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-      .links { 
-        flex-direction: column; 
-      }
-      
-      #contact p, a { overflow-wrap: break-word; }
-    }
-  </style>
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Tipografia all'interno delle card */
+        .profile-name {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0 0 25px 0;
+            font-weight: 400;
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #edf2f7;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2em;
+            color: var(--text-muted);
+        }
+
+        /* Sezione Profile (Testo + Immagine) */
+        .about-grid {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+        }
+
+        /* Liste (Research Interests) */
+        ul.topic-list {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        ul.topic-list li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        /* Bottoni & Contatti */
+        a.text-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a.text-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+            border: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .navbar-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .nav-main {
+                justify-content: center;
+            }
+            .nav-right {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+            .about-grid {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-name {
+                font-size: 2rem;
+            }
+            p {
+                text-align: left; /* Su mobile il giustificato è spesso illeggibile */
+            }
+            .card {
+                padding: 25px;
+            }
+            .social-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  
-  <!-- Header con foto, nome e navigazione -->
-  <header>
-    <img src="me.jpg" alt="Andrea Panebianco">
-    <div>
-      <h1>Andrea Panebianco</h1>
-      <p>Postdoctoral Researcher<br>
-        <a href="https://eng.auburn.edu/ece/" target="_blank" class="no-underline">Department of Electrical and Computer Engineering</a><br>
-        <a href="https://www.auburn.edu/" target="_blank" class="no-underline">Auburn University</a>, Auburn, AL, USA
-      </p>
-      <nav>
-        <a href="publications.html">Publications</a>
-        <a href="cv.html">CV</a>
-      </nav>
+
+    <!-- Navigazione Top -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Andrea Panebianco</a>
+        
+        <div class="nav-main">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
+            <a href="cv.html" style="color: var(--primary-color); font-weight: 600;">CV</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Intestazione e About Me uniti nella prima card -->
+        <section id="about" class="card">
+            <div class="about-grid">
+                <img src="me.jpg" alt="Andrea Panebianco" class="profile-img">
+                <div>
+                    <h1 class="profile-name">Andrea Panebianco</h1>
+                    <h2 class="profile-title">
+                        Postdoctoral Researcher at <a href="https://eng.auburn.edu/ece/" target="_blank" class="text-link">Auburn University</a>
+                    </h2>
+                    
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        I am a Postdoctoral Researcher in the Department of Electrical and Computer Engineering at Auburn University, USA. My research lies at the intersection of advanced networking, online learning, and optimization, with a strong focus on designing energy-efficient and adaptive communication protocols.
+                    </p>
+                    <p>
+                        Currently, my work explores <strong>Semantic Communications</strong>, cross-layer optimization (such as Meta-VIB), and the application of <strong>Multi-Armed Bandit (MAB)</strong> and <strong>Deep Reinforcement Learning (DRL)</strong> algorithms for reliable, resource-constrained IoT systems. I am also engaged in practical deployments, utilizing mathematical frameworks like Restless Multi-Armed Bandit (RMAB) models and computer vision pipelines for critical real-world applications, including pedestrian safety monitoring. Previously, my doctoral research focused heavily on adaptive protocols for the <strong>Internet of Underwater Things (IoUT)</strong>.
+                    </p>
+                    <p>
+                        I earned my Ph.D. in <a href="https://www.unipa.it/dipartimenti/ingegneria/dottorati/informationandcommunicationtechnologies/en/index.html" target="_blank" class="text-link">Information and Communication Technologies</a> from the <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="text-link">University of Palermo</a>, Italy, in December 2025. I hold a Bachelor’s and a Master’s degree in Electronic and Telecommunication Engineering from the <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>. In 2023, my research was recognized with the prestigious <strong>Francesco Carassa Award</strong> by the <a href="https://www.gtti.it/" target="_blank" class="text-link">Italian National Group on Telecommunications and Information Theory (GTTI)</a> for the best presentation and publication.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests -->
+        <section id="research" class="card">
+            <h2 class="section-title">Research Interests</h2>
+            <p>My work broadly encompasses the theoretical design and practical implementation of adaptive networking systems. Key topics of interest include:</p>
+            <ul class="topic-list">
+                <li>Semantic Communications and Data Significance Metrics</li>
+                <li>Cross-Layer Optimization and Meta Variational Information Bottleneck (Meta-VIB)</li>
+                <li>Multi-Armed Bandit (MAB) and Restless MAB (RMAB) Models</li>
+                <li>Deep Reinforcement Learning for Resource Allocation</li>
+                <li>Age-of-Information (AoI)-Aware Scheduling and Network Optimization</li>
+                <li>Energy-Efficient Protocols for the Internet of Underwater Things (IoUT)</li>
+                <li>Computer Vision and Applied IoT for Safety Monitoring</li>
+            </ul>
+        </section>
+        
+        <!-- Contact & Links -->
+        <section id="contact" class="card">
+            <h2 class="section-title">Contact</h2>
+            <p>
+                <strong>Email:</strong> <a href="mailto:anp0105@auburn.edu" class="text-link">anp0105@auburn.edu</a><br>
+                <strong>Office:</strong> <a href="https://www.auburn.edu/administration/facilities/webapps/buildings/profile.php?bldg=AA_U0202&fz=" target="_blank" class="text-link">Shelby Center for Engineering Technology</a>, 345 West Magnolia Avenue Auburn, AL 36849
+            </p>
+            
+            <div class="social-buttons">
+                <a href="https://scholar.google.com/citations?user=Wkx_56QAAAAJ&hl=en" target="_blank" class="btn">Google Scholar</a>
+                <a href="https://orcid.org/0009-0002-4218-2167" target="_blank" class="btn">ORCID</a>
+                <a href="https://www.linkedin.com/in/andrea-panebianco-70b11b176" target="_blank" class="btn">LinkedIn</a>
+            </div>
+        </section>
+
     </div>
-  </header>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:anp0105@auburn.edu" target="_blank" class="no-underline">anp0105@auburn.edu</a></p>
-    <p>Office: <a href="https://www.auburn.edu/administration/facilities/webapps/buildings/profile.php?bldg=AA_U0202&fz=" target="_blank" class="no-underline">Shelby Center for Engineering Technology</a>, 345 West Magnolia Avenue Auburn, AL 36849</p>
-  </section>
+    <footer>
+        &copy; 2026 Andrea Panebianco. All rights reserved.
+    </footer>
 
-  <!-- About Me -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Postdoctoral Researcher in the <a href="https://eng.auburn.edu/ece/" target="_blank" class="no-underline">Department of Electrical and Computer Engineering</a> at <a href="https://www.auburn.edu/" target="_blank" class="no-underline">Auburn University</a>, USA. My research lies at the intersection of advanced networking, online learning, and optimization, with a strong focus on designing energy-efficient and adaptive communication protocols.
-    </p>
-    <p>
-      Currently, my work explores <strong>Semantic Communications</strong>, cross-layer optimization (such as Meta-VIB), and the application of <strong>Multi-Armed Bandit (MAB)</strong> and <strong>Deep Reinforcement Learning (DRL)</strong> algorithms for reliable, resource-constrained IoT systems. I am also engaged in practical deployments, utilizing mathematical frameworks like Restless Multi-Armed Bandit (RMAB) models and computer vision pipelines for critical real-world applications, including pedestrian safety monitoring. Previously, my doctoral research focused heavily on adaptive protocols for the <strong>Internet of Underwater Things (IoUT)</strong>.
-    </p>
-    <p>
-      I earned my Ph.D. in <a href="https://www.unipa.it/dipartimenti/ingegneria/dottorati/informationandcommunicationtechnologies/en/index.html" target="_blank" class="no-underline">Information and Communication Technologies</a> from the <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="no-underline">University of Palermo</a>, Italy, in December 2025. I hold a Bachelor’s and a Master’s degree in Electronic and Telecommunication Engineering from the <a href="https://www.unict.it/en" target="_blank" class="no-underline">University of Catania</a>. In 2023, my research was recognized with the prestigious <strong>Francesco Carassa Award</strong> by the <a href="https://www.gtti.it/" target="_blank" class="no-underline">Italian National Group on Telecommunications and Information Theory (GTTI)</a> for the best presentation and publication.
-    </p>
-  </section>
-
-  <!-- Research Interests -->
-  <section id="research">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Semantic Communications and Data Significance Metrics</li>
-      <li>Cross-Layer Optimization and Meta Variational Information Bottleneck (Meta-VIB)</li>
-      <li>Multi-Armed Bandit (MAB) and Restless MAB (RMAB) Models</li>
-      <li>Deep Reinforcement Learning for Resource Allocation</li>
-      <li>Age-of-Information (AoI)-Aware Scheduling and Network Optimization</li>
-      <li>Energy-Efficient Protocols for the Internet of Underwater Things (IoUT)</li>
-      <li>Computer Vision and Applied IoT for Safety Monitoring</li>
-    </ul>
-  </section>
-
-  <!-- Links esterni -->
-  <div class="links">
-    <a href="https://orcid.org/0009-0002-4218-2167" target="_blank">ORCID</a>
-    <a href="https://scholar.google.com/citations?user=Wkx_56QAAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/andrea-panebianco-70b11b176" target="_blank">LinkedIn</a>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Andrea Panebianco
-  </footer>
 </body>
 </html>
