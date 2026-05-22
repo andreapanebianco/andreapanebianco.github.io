@@ -18,9 +18,27 @@
             --bg-color: #f7fafc;
             --card-bg: #ffffff;
             --nav-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --border-color-light: #edf2f7;
+            --hover-bg: #edf2f7;
             --border-radius: 12px;
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #90cdf4;
+            --accent-color: #63b3ed;
+            --text-color: #f7fafc;
+            --text-muted: #a0aec0;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --nav-bg: #1e293b;
+            --border-color: #334155;
+            --border-color-light: #334155;
+            --hover-bg: #334155;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.5);
         }
 
         html {
@@ -36,6 +54,7 @@
             color: var(--text-color);
             line-height: 1.7;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Navbar */
@@ -48,6 +67,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background-color 0.3s ease;
         }
 
         .navbar-logo {
@@ -68,15 +88,31 @@
         }
 
         .navbar a:not(.navbar-logo):hover {
-            background-color: #edf2f7;
+            background-color: var(--hover-bg);
             color: var(--accent-color);
         }
 
         .nav-right {
             margin-left: auto;
             display: flex;
+            align-items: center;
             gap: 10px;
             flex-wrap: wrap;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 10px;
+            transition: transform 0.2s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* Layout & Cards */
@@ -92,7 +128,8 @@
             box-shadow: var(--shadow-sm);
             padding: 40px;
             margin-bottom: 30px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         /* Tipografia all'interno delle card */
@@ -117,7 +154,7 @@
             margin-top: 0;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #edf2f7;
+            border-bottom: 2px solid var(--border-color-light);
         }
 
         p {
@@ -172,9 +209,9 @@
         }
 
         .btn {
-            background-color: #f8fafc;
+            background-color: var(--card-bg);
             color: var(--primary-color);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
@@ -240,6 +277,7 @@
             <a href="index.html" style="color: var(--accent-color); font-weight: 700;">Home</a>
             <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
             <a href="cv.html" style="color: var(--primary-color); font-weight: 600;">CV</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         </div>
     </nav>
 
@@ -305,5 +343,34 @@
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
 
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleButton.textContent = '☀️';
+            }
+        } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggleButton.textContent = '☀️';
+            }
+        }
+
+        toggleButton.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '☀️';
+            }
+        });
+    </script>
 </body>
 </html>
