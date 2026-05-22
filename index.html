@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Panebianco — Homepage</title>
     
+    <!-- Script per prevenire il lampo bianco (FOUC) -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -343,22 +351,16 @@
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
 
+    <!-- Script logica pulsante tema -->
     <script>
         const toggleButton = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleButton.textContent = '☀️';
-            }
-        } else {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                toggleButton.textContent = '☀️';
-            }
+        // Imposta l'icona corretta al caricamento della pagina
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            toggleButton.textContent = '☀️';
         }
 
+        // Gestione del click
         toggleButton.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
             if (theme === 'dark') {
