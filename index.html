@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Panebianco — Homepage</title>
     
-    <!-- Script per prevenire il lampo bianco (FOUC) -->
     <script>
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -216,23 +215,32 @@
             flex-wrap: wrap;
         }
 
-        .btn {
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
             background-color: var(--card-bg);
             color: var(--primary-color);
             border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            border-radius: 6px;
+            border-radius: 50%;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
             transition: all 0.2s ease;
         }
 
-        .btn:hover {
+        .social-icon:hover {
             background-color: var(--accent-color);
-            color: white;
+            color: #ffffff;
             border-color: var(--accent-color);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-md);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* Footer */
@@ -277,7 +285,6 @@
 </head>
 <body>
 
-    <!-- Navigazione Top -->
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Dr. Andrea Panebianco</a>
 
@@ -291,7 +298,6 @@
 
     <div class="container">
         
-        <!-- Intestazione e About Me uniti nella prima card -->
         <section id="about" class="card">
             <div class="about-grid">
                 <img src="me.jpg" alt="Andrea Panebianco" class="profile-img">
@@ -315,7 +321,6 @@
             </div>
         </section>
 
-        <!-- Research Interests -->
         <section id="research" class="card">
             <h2 class="section-title">Research Interests</h2>
             <p>My work broadly encompasses the theoretical design and practical implementation of adaptive networking systems. Key topics of interest include:</p>
@@ -330,7 +335,6 @@
             </ul>
         </section>
         
-        <!-- Contact & Links -->
         <section id="contact" class="card">
             <h2 class="section-title">Contact</h2>
             <p>
@@ -339,9 +343,15 @@
             </p>
             
             <div class="social-buttons">
-                <a href="https://scholar.google.com/citations?user=Wkx_56QAAAAJ&hl=en" target="_blank" class="btn">Google Scholar</a>
-                <a href="https://orcid.org/0009-0002-4218-2167" target="_blank" class="btn">ORCID</a>
-                <a href="https://www.linkedin.com/in/andrea-panebianco-70b11b176" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=Wkx_56QAAAAJ&hl=en" target="_blank" class="social-icon" title="Google Scholar">
+                    <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c15.06 4.63 31.35 4.63 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-21.53 6.61-44.59 6.61-66.12 0l-123.6-37.97v125.1c0 30.13 54.02 54.54 120.5 58.01v-27.46c0-17.67 14.33-32 32-32s32 14.33 32 32v27.46c66.48-3.47 120.5-27.88 120.5-58.01v-125.1l-115.28 35.37z"/></svg>
+                </a>
+                <a href="https://orcid.org/0009-0002-4218-2167" target="_blank" class="social-icon" title="ORCID">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M294.75 188.19h-45.92V342h47.47c67.62 0 83.12-51.34 83.12-76.91 0-41.64-26.54-76.9-84.67-76.9zM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-80.79 360.76h-29.84v-207.5h29.84zm-14.92-231.14a19.57 19.57 0 1 1 19.57-19.57 19.64 19.64 0 0 1-19.57 19.57zM300 369h-81V161.26h80.6c76.73 0 110.44 54.83 110.44 103.85C410 318.39 368.38 369 300 369z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/andrea-panebianco-70b11b176" target="_blank" class="social-icon" title="LinkedIn">
+                    <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                </a>
             </div>
         </section>
 
@@ -351,7 +361,6 @@
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
 
-    <!-- Script logica pulsante tema -->
     <script>
         const toggleButton = document.getElementById('theme-toggle');
 
