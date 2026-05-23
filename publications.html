@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications — Andrea Panebianco</title>
     
-    <!-- Script per prevenire il lampo bianco (FOUC) -->
     <script>
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -167,6 +166,14 @@
             color: var(--text-muted);
         }
 
+        .pub-note {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: -20px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
         /* Stile Liste Pubblicazioni */
         ul.pub-list {
             list-style: none;
@@ -241,7 +248,6 @@
 </head>
 <body>
 
-    <!-- Navigazione Top -->
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Dr. Andrea Panebianco</a>
 
@@ -258,18 +264,18 @@
         <div class="page-header">
             <h1>Publications</h1>
         </div>
+        <p class="pub-note"><sup>&dagger;</sup> Authors are listed in alphabetical order.</p>
 
-        <!-- Journal Articles -->
         <section id="journal" class="card">
             <h2 class="section-title">Journal Papers</h2>
             <ul class="pub-list">
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R.<sup>&dagger;</sup> (2025). 
                     <a href="https://doi.org/10.1109/TNSM.2025.3629240" target="_blank" class="text-link">
                     Bandits Under the Waves: A Fully-Distributed Multi-Armed Bandit Framework for Modulation Adaptation in the Internet of Underwater Things
                     </a>. 
                     <em>IEEE Transactions on Network and Service Management</em> (vol. 23, pp. 639-653).
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R.<sup>&dagger;</sup> (2025). 
                     <a href="https://doi.org/10.1109/OJCOMS.2025.3542184" target="_blank" class="text-link">
                     AMUSE: A Multi-Armed Bandit Framework for Energy-Efficient Modulation Adaptation in Underwater Acoustic Networks
                     </a>. 
@@ -281,7 +287,7 @@
                     </a>. 
                     <em>Computer Networks</em> (vol. 252, pp. 110679).
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., & <strong>Panebianco, A.</strong> (2024). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., & <strong>Panebianco, A.</strong><sup>&dagger;</sup> (2024). 
                     <a href="https://doi.org/10.1016/j.comnet.2024.110557" target="_blank" class="text-link">
                     A comparative analysis of predictive channel models for real shallow water environments
                     </a>. 
@@ -293,7 +299,7 @@
                     </a>. 
                     <em>Frontiers in Communications and Networks</em> (vol. 4, pp. 1179626).
                 </li>
-                <li>Brincat, A. A., Busacca, F., Galluccio, L., Mertens, J. S., Musumeci, A., Palazzo, S., & <strong>Panebianco, A.</strong> (2022). 
+                <li>Brincat, A. A., Busacca, F., Galluccio, L., Mertens, J. S., Musumeci, A., Palazzo, S., & <strong>Panebianco, A.</strong><sup>&dagger;</sup> (2022). 
                     <a href="https://doi.org/10.1016/j.comcom.2022.05.032" target="_blank" class="text-link">
                     An integrated acoustic/LoRa system for transmission of multimedia sensor data over an Internet of Underwater Things
                     </a>. 
@@ -302,11 +308,10 @@
             </ul>
         </section>
 
-        <!-- Conference Papers -->
         <section id="conference" class="card">
             <h2 class="section-title">Conference Papers</h2>
             <ul class="pub-list">
-                <li>Busacca, F., <strong>Panebianco, A.</strong>, Sun Y. (2026, March). 
+                <li>Busacca, F., <strong>Panebianco, A.</strong>, Sun Y.<sup>&dagger;</sup> (2026, March). 
                     <a href="https://doi.org/10.1109/GLOBECOM59602.2025.11432193" target="_blank" class="text-link">
                     Adaptive Underwater Acoustic Communications with Limited Feedback: An AoI-Aware Hierarchical Bandit Approach
                     </a>. 
@@ -318,13 +323,13 @@
                     </a>. 
                     In <em>PIMRC 2025 Workshops — IEEE 36th International Symposium on Personal, Indoor and Mobile Radio Communications</em> (pp. 1-6). IEEE.
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025, June). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R.<sup>&dagger;</sup> (2025, June). 
                     <a href="https://doi.org/10.1109/ICCWorkshops67674.2025.11162283" target="_blank" class="text-link">
                     POSEIDON: A multi-armed bandit framework for Power and mOdulation SchEme adaptatIon in unDerwater acOustic Networks
                     </a>. 
                     In <em>ICC 2025 Workshops — IEEE International Conference on Communications Workshops</em> (pp. 2045-2050). IEEE.
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025, March). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R.<sup>&dagger;</sup> (2025, March). 
                     <a href="https://doi.org/10.1109/WCNC61545.2025.10978174" target="_blank" class="text-link">
                     A Distributed Multi-Armed Bandit Approach for Modulation Adaptation in Underwater Networks
                     </a>. 
@@ -336,19 +341,19 @@
                     </a>. 
                     In <em>GLOBECOM 2024 — IEEE Global Communications Conference</em> (pp. 2250-2255). IEEE.
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2024, June). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R.<sup>&dagger;</sup> (2024, June). 
                     <a href="https://doi.org/10.1109/ICC51166.2024.10623120" target="_blank" class="text-link">
                     Adaptive modulation in underwater acoustic networks (AMUSE): A multi-armed bandit approach
                     </a>. 
                     In <em>ICC 2024 — IEEE International Conference on Communications</em> (pp. 2336-2341). IEEE.
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Scarvaglieri, A. (2024, June). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Scarvaglieri, A.<sup>&dagger;</sup> (2024, June). 
                     <a href="https://doi.org/10.1109/ICCWorkshops59551.2024.10615825" target="_blank" class="text-link">
                     Balancing Optimization for Underwater Network Cost Effectiveness (BOUNCE): a Multi-Armed Bandit Solution
                     </a>. 
                     In <em>ICC 2024 Workshops — IEEE International Conference on Communications Workshops</em> (pp. 1340-1345). IEEE.
                 </li>
-                <li>Busacca, F., Galluccio, L., Palazzo, S., & <strong>Panebianco, A.</strong> (2023, May). 
+                <li>Busacca, F., Galluccio, L., Palazzo, S., & <strong>Panebianco, A.</strong><sup>&dagger;</sup> (2023, May). 
                     <a href="https://doi.org/10.1109/ICCWorkshops57953.2023.10283721" target="_blank" class="text-link">
                     Underwater acoustic channel models for SNR prediction in a real shallow water environment
                     </a>. 
@@ -363,7 +368,6 @@
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
 
-    <!-- Script logica pulsante tema -->
     <script>
         const toggleButton = document.getElementById('theme-toggle');
 
