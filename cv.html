@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Andrea Panebianco</title>
     
-    <!-- Script per prevenire il lampo bianco (FOUC) -->
+    <meta name="view-transition" content="same-origin">
+
     <script>
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -128,6 +129,20 @@
             max-width: 950px;
             margin: 40px auto;
             padding: 0 20px;
+            /* Animazione di comparsa morbida */
+            animation: fadeSlideUp 0.5s ease-out forwards;
+        }
+
+        /* Keyframes per l'animazione di comparsa */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .page-header {
@@ -289,7 +304,6 @@
 </head>
 <body>
 
-    <!-- Navigazione Top -->
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Dr. Andrea Panebianco</a>
         
@@ -308,14 +322,12 @@
             <a href="cv_andrea_panebianco.pdf" target="_blank" class="btn-primary">Download CV (PDF)</a>
         </div>
 
-        <!-- 1. Contact -->
         <section id="contact" class="card">
             <h2 class="section-title">Contact</h2>
             <p style="margin-bottom: 8px;"><strong>Email:</strong> <a href="mailto:anp0105@auburn.edu" target="_blank" class="text-link">anp0105@auburn.edu</a></p>
             <p style="margin-bottom: 0;"><strong>Office:</strong> <a href="https://www.auburn.edu/administration/facilities/webapps/buildings/profile.php?bldg=AA_U0202&fz=" target="_blank" class="text-link">Shelby Center for Engineering Technology</a>, 345 West Magnolia Avenue, Auburn, AL, USA</p>
         </section>
 
-        <!-- 2. Professional Experience -->
         <section id="experience" class="card">
             <h2 class="section-title">Professional Experience</h2>
             <ul class="cv-list">
@@ -342,7 +354,6 @@
             </ul>
         </section>
 
-        <!-- 3. Education -->
         <section id="education" class="card">
             <h2 class="section-title">Education</h2>
             <ul class="cv-list">
@@ -364,7 +375,6 @@
             </ul>
         </section>
 
-        <!-- 4. Honors and Awards -->
         <section id="honors" class="card">
             <h2 class="section-title">Honors and Awards</h2>
             <ul class="cv-list">
@@ -381,7 +391,6 @@
             </ul>
         </section>
 
-        <!-- 5. Professional Activities -->
         <section id="activities" class="card">
             <h2 class="section-title">Professional Activities and Services</h2>
             <ul class="cv-list">
@@ -401,7 +410,6 @@
             </ul>
         </section>
 
-        <!-- 6. Projects -->
         <section id="projects" class="card">
             <h2 class="section-title">Research Projects</h2>
             <ul class="cv-list">
@@ -433,7 +441,6 @@
             </ul>
         </section>
 
-        <!-- 7. Students -->
         <section id="students" class="card">
             <h2 class="section-title">Students</h2>
             <ul class="cv-list">
@@ -447,7 +454,6 @@
             </ul>
         </section>
 
-        <!-- 8. Invited Talks -->
         <section id="talks" class="card">
             <h2 class="section-title">Invited Talks and Seminars</h2>
             <ul class="cv-list">
@@ -468,7 +474,6 @@
             </ul>
         </section>
 
-        <!-- 9. Professional Membership -->
         <section id="membership" class="card">
             <h2 class="section-title">Professional Membership</h2>
             <ul class="cv-list">
@@ -484,7 +489,6 @@
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
 
-    <!-- Script logica pulsante tema -->
     <script>
         const toggleButton = document.getElementById('theme-toggle');
 
