@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — Andrea Panebianco</title>
+    <title>Andrea Panebianco — Homepage</title>
     
-    <!-- Script per prevenire il lampo bianco (FOUC) -->
     <script>
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -49,23 +48,14 @@
             --shadow-md: 0 4px 6px rgba(0,0,0,0.5);
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.7;
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Navbar */
         .navbar {
             display: flex;
             align-items: center;
@@ -75,16 +65,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease;
         }
 
-        .navbar-logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
+        .navbar-logo { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
 
         .navbar a:not(.navbar-logo) {
             color: var(--text-muted);
@@ -92,420 +75,54 @@
             padding: 8px 16px;
             font-weight: 500;
             border-radius: 6px;
-            transition: all 0.2s ease;
         }
 
-        .navbar a:not(.navbar-logo):hover {
-            background-color: var(--hover-bg);
-            color: var(--accent-color);
-        }
+        .navbar a.active { color: var(--accent-color); font-weight: 700; }
+        .navbar a:not(.navbar-logo):hover { background-color: var(--hover-bg); color: var(--accent-color); }
 
-        .nav-right {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 5px;
-            margin-left: 10px;
-            transition: transform 0.2s ease;
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        /* Layout & Cards */
-        .container {
-            max-width: 950px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .page-header h1 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid transparent;
-        }
-
-        .btn-primary:hover {
-            background-color: #1e40af;
-            box-shadow: var(--shadow-md);
-            transform: translateY(-1px);
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            padding: 40px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border-color);
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        h2.section-title {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color-light);
-        }
-
-        p {
-            margin-bottom: 1.2em;
-            color: var(--text-muted);
-        }
-
-        /* Liste per CV (Esperienze, Formazione, ecc.) */
-        ul.cv-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-
-        ul.cv-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 25px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        ul.cv-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Bullet point */
-        ul.cv-list li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-
-        ul.cv-list li strong {
-            color: var(--text-color);
-            font-size: 1.05rem;
-        }
-
-        .date-text {
-            color: #64748b;
-            font-size: 0.95rem;
-            display: inline-block;
-            margin-left: 4px;
-        }
-
-        a.text-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a.text-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px;
-            }
-            .navbar-logo {
-                margin-bottom: 15px;
-            }
-            .nav-right {
-                margin-left: 0;
-                width: 100%;
-                justify-content: center;
-            }
-            .page-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .btn-primary {
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box;
-            }
-            .card {
-                padding: 25px;
-            }
-            ul.cv-list li {
-                overflow-wrap: break-word;
-            }
-            .date-text {
-                display: block;
-                margin-left: 0;
-                margin-top: 4px;
-            }
-        }
+        .container { max-width: 950px; margin: 40px auto; padding: 0 20px; }
+        .card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); padding: 40px; margin-bottom: 30px; border: 1px solid var(--border-color); }
+        .profile-name { font-size: 2.2rem; color: var(--primary-color); margin: 0 0 5px 0; }
+        .profile-title { font-size: 1.1rem; color: var(--text-muted); margin: 0 0 25px 0; }
+        h2.section-title { color: var(--primary-color); border-bottom: 2px solid var(--border-color-light); padding-bottom: 10px; }
+        .about-grid { display: flex; gap: 40px; align-items: flex-start; }
+        .profile-img { width: 200px; height: 200px; object-fit: cover; border-radius: 12px; }
+        .social-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .social-icon { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--primary-color); }
+        .social-icon:hover { background-color: var(--accent-color); color: white; }
     </style>
 </head>
 <body>
-
-    <!-- Navigazione Top -->
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Dr. Andrea Panebianco</a>
-        
         <div class="nav-right">
-            <a href="index.html" style="color: var(--primary-color); font-weight: 600;">Home</a>
-            <a href="publications.html" style="color: var(--primary-color); font-weight: 600;">Publications</a>
-            <a href="cv.html" style="color: var(--accent-color); font-weight: 700;">CV</a>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="cv.html">CV</a>
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
         </div>
     </nav>
-
     <div class="container">
-        
-        <div class="page-header">
-            <h1>Curriculum Vitae</h1>
-            <a href="cv_andrea_panebianco.pdf" target="_blank" class="btn-primary">Download CV (PDF)</a>
-        </div>
-
-        <!-- 1. Contact -->
-        <section id="contact" class="card">
-            <h2 class="section-title">Contact</h2>
-            <p style="margin-bottom: 8px;"><strong>Email:</strong> <a href="mailto:anp0105@auburn.edu" target="_blank" class="text-link">anp0105@auburn.edu</a></p>
-            <p style="margin-bottom: 0;"><strong>Office:</strong> <a href="https://www.auburn.edu/administration/facilities/webapps/buildings/profile.php?bldg=AA_U0202&fz=" target="_blank" class="text-link">Shelby Center for Engineering Technology</a>, 345 West Magnolia Avenue, Auburn, AL, USA</p>
+        <section class="card">
+            <div class="about-grid">
+                <img src="me.jpg" alt="Andrea Panebianco" class="profile-img">
+                <div>
+                    <h1 class="profile-name">Andrea Panebianco</h1>
+                    <h2 class="profile-title">Postdoctoral Researcher at Auburn University</h2>
+                    <h2 class="section-title">About Me</h2>
+                    <p>I am a Postdoctoral Researcher in the Department of ECE at Auburn University. I earned my Ph.D. from the University of Palermo, and hold a Master’s degree in Telecommunications Engineering and a Bachelor’s degree in Electronic Engineering from the University of Catania.</p>
+                </div>
+            </div>
         </section>
-
-        <!-- 2. Professional Experience -->
-        <section id="experience" class="card">
-            <h2 class="section-title">Professional Experience</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Postdoctoral Researcher</strong><br> 
-                    <a href="https://eng.auburn.edu/ece/#gsc.tab=0" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA 
-                    <span class="date-text">(Jan. 2026 – Present)</span>
-                </li>
-                <li>
-                    <strong>Visiting Ph.D. Student</strong><br> 
-                    <a href="https://eng.auburn.edu/ece/#gsc.tab=0" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA 
-                    <span class="date-text">(Jan. 2025 – Jul. 2025)</span>
-                </li>
-                <li>
-                    <strong>Teaching Assistant (IoT and Big Data Sensing, Compression, and Communication)</strong><br>
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Mar. 2024 – Jun. 2024 &nbsp;|&nbsp; Mar. 2023 – Jun. 2023)</span>
-                </li>
-                <li>
-                    <strong>Research Intern</strong><br>
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Sep. 2020 – Jun. 2021)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 3. Education -->
-        <section id="education" class="card">
-            <h2 class="section-title">Education</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Ph.D. in Information and Communication Technologies</strong><br> 
-                    <a href="https://www.unipa.it/dipartimenti/ingegneria/en/index.html" target="_blank" class="text-link">Department of Engineering</a>, <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="text-link">University of Palermo</a>, Palermo, Italy
-                    <span class="date-text">(Nov. 2022 – Dec. 2025)</span>
-                </li>
-                <li>
-                    <strong>Master's Degree in Telecommunications Engineering</strong><br>
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Oct. 2019 – Oct. 2022)</span>
-                </li>
-                <li>
-                    <strong>Bachelor's Degree in Electronic Engineering</strong><br> 
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Sep. 2015 – Mar. 2020)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 4. Honors and Awards -->
-        <section id="honors" class="card">
-            <h2 class="section-title">Honors and Awards</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Francesco Carassa Award – GTTI Annual Meeting 2023</strong><br>
-                    <a href="https://www.gtti.it/" target="_blank" class="text-link">Italian National Group on Telecommunications and Information Theory (GTTI)</a> Annual Meeting 2023, Rome, Italy
-                    <span class="date-text">(Sep. 2023)</span>
-                </li>
-                <li>
-                    <strong>Student Award "TLC for a Better World" – Innovative Prototype Category</strong><br>
-                    TelcomDay 2019, held at the <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Dec. 2019)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 5. Professional Activities -->
-        <section id="activities" class="card">
-            <h2 class="section-title">Professional Activities and Services</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Finance and Registration Chair</strong><br>
-                    <a href="https://wiopt2026.github.io/" target="_blank" class="text-link">IEEE WiOpt 2026 — The 24th International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks</a>, 
-                    hosted by <a href="https://www.osu.edu/" target="_blank" class="text-link">The Ohio State University</a>, Columbus, OH, USA
-                    <span class="date-text">(Jun. 2026)</span>
-                </li>
-                <li>
-                    <strong>Technical Program Committee Chair</strong><br>
-                    <a href="https://mosc2026.github.io/" target="_blank" class="text-link">3rd Workshop on Modeling and Optimization for Semantic Communications (MOSC)</a>, held in conjunction with 
-                    <a href="https://wiopt2026.github.io/" target="_blank" class="text-link">IEEE WiOpt 2026</a>, 
-                    hosted by <a href="https://www.osu.edu/" target="_blank" class="text-link">The Ohio State University</a>, Columbus, OH, USA 
-                    <span class="date-text">(Jun. 2026)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 6. Projects -->
-        <section id="projects" class="card">
-            <h2 class="section-title">Research Projects</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Distributed Network Control in Dynamic Military Environments: A Learning-based approach — from Theory to Implementation</strong><br>
-                    <a href="https://eng.auburn.edu/ece/" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA
-                    <span class="date-text">(Jan. 2026 – Present)</span>
-                </li>
-                <li>
-                    <strong>Development of NextG Wireless Testbeds for Semantic and Goal-Oriented Communication</strong><br>
-                    <a href="https://eng.auburn.edu/ece/" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA
-                    <span class="date-text">(Jan. 2026 – Present)</span>
-                </li>
-                <li>
-                    <strong>AQUASMARTT</strong><br>
-                    <a href="https://www.unipa.it/dipartimenti/ingegneria/en/index.html" target="_blank" class="text-link">Department of Engineering</a>, <a href="https://www.unipa.it/mobilita/en/" target="_blank" class="text-link">University of Palermo</a>, Palermo, Italy 
-                    <span class="date-text">(Nov. 2022 – Dec. 2025)</span>
-                </li>
-                <li>
-                    <strong>4Frailty</strong><br>
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Jul. 2023 – Oct. 2023)</span>
-                </li>
-                <li>
-                    <strong>Secure and Efficient Wireless Communications (Intelligent Communication Algorithms)</strong><br>
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Sep. 2020 – Feb. 2021)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 7. Students -->
-        <section id="students" class="card">
-            <h2 class="section-title">Students</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>Co-supervisor of Master's Thesis</strong><br>
-                    Student: Dario Scuderi — Thesis title: <em>"Smart Carrier Selection in OFDM-based Acoustic Networks for the Internet of Underwater Things"</em><br>
-                    Master’s Degree in <a href="https://www.dieei.unict.it/en/courses/lm-27" target="_blank" class="text-link">Communications Engineering</a>, 
-                    <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(Jan. 2025 – Oct. 2025)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 8. Invited Talks -->
-        <section id="talks" class="card">
-            <h2 class="section-title">Invited Talks and Seminars</h2>
-            <ul class="cv-list">
-                <li>
-                    <strong>A Multi-Armed Bandit Approach in Underwater Networks</strong><br>
-                    Invited talk delivered at the <a href="https://www.subseapulse.com/unwis/" target="_blank" class="text-link">Winter School on Underwater Network Simulations and Experimentation (UNWiS)</a>, 
-                    <a href="https://www.dei.unipd.it/en/" target="_blank" class="text-link">Department of Information Engineering</a>, 
-                    <a href="https://www.unipd.it/en/" target="_blank" class="text-link">University of Padova</a>, Padova, Italy 
-                    <span class="date-text">(Feb. 2, 2024)</span>
-                </li>
-                <li>
-                    <strong>Design and Experimentation of an Integrated Acoustic/LoRa System for Transmission of Multimedia Sensor Data over an Internet of Underwater Things</strong><br>
-                    Invited talk delivered at the seminar <em>Development and Applications of Innovative Materials and Processes for the Diagnostics and Restoration of Cultural Heritage</em>, 
-                    <a href="https://www.dieei.unict.it/en" target="_blank" class="text-link">Department of Electrical, Electronic and Computer Engineering</a>, 
-                    <a href="https://www.unict.it/en" target="_blank" class="text-link">University of Catania</a>, Catania, Italy 
-                    <span class="date-text">(May 18, 2021)</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 9. Professional Membership -->
-        <section id="membership" class="card">
-            <h2 class="section-title">Professional Membership</h2>
-            <ul class="cv-list">
-                <li><strong>IEEE Member</strong></li>
-                <li><strong>IEEE Young Professionals Member</strong></li>
-                <li><strong>IEEE Communications Society Member</strong></li>
-            </ul>
-        </section>
-
     </div>
-    
-    <footer>
-        &copy; 2026 Andrea Panebianco. All rights reserved.
-    </footer>
-
-    <!-- Script logica pulsante tema -->
     <script>
-        const toggleButton = document.getElementById('theme-toggle');
-
-        // Imposta l'icona corretta al caricamento della pagina
-        if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            toggleButton.textContent = '☀️';
+        function toggleTheme() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
         }
-
-        // Gestione del click
-        toggleButton.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                toggleButton.textContent = '🌙';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                toggleButton.textContent = '☀️';
-            }
-        });
     </script>
 </body>
 </html>
