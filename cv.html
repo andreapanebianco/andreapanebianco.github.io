@@ -228,11 +228,12 @@
             font-size: 1.05rem;
         }
 
+        /* Classe per mandare a capo le date automaticamente */
         .date-text {
             color: #64748b;
             font-size: 0.95rem;
-            display: inline-block;
-            margin-left: 4px;
+            display: block;
+            margin-top: 4px;
         }
 
         a.text-link {
@@ -283,11 +284,6 @@
             ul.cv-list li {
                 overflow-wrap: break-word;
             }
-            .date-text {
-                display: block;
-                margin-left: 0;
-                margin-top: 4px;
-            }
         }
     </style>
 </head>
@@ -300,7 +296,6 @@
             <a href="index.html">Home</a>
             <a href="publications.html">Publications</a>
             <a href="cv.html" class="active">CV</a>
-            <!-- Aggiunta la classe theme-toggle per ereditare correttamente lo stile senza sfondo quadrato -->
             <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">🌙</button>
         </div>
     </nav>
@@ -375,7 +370,7 @@
                 <li>
                     <strong>Significance-Driven Semantic Communication</strong><br>
                     Sun, Y., Chakraborty, S., McDowell, C. D., & <strong>Panebianco, A.</strong><br>
-                    U.S. Provisional Patent Application Nos. 63/875,119 <span class="date-text">(filed Sep. 3, 2025)</span> and 64/065,591 <span class="date-text">(filed May 14, 2026)</span>.
+                    U.S. Provisional Patent Application Nos. 63/875,119, filed Sep. 3, 2025, and 64/065,591, filed May 14, 2026.
                 </li>
             </ul>
         </section>
@@ -384,11 +379,6 @@
         <section id="projects" class="card">
             <h2 class="section-title">Research Projects</h2>
             <ul class="cv-list">
-                <li>
-                    <strong>Distributed Network Control in Dynamic Military Environments: A Learning-based approach — from Theory to Implementation</strong><br>
-                    <a href="https://eng.auburn.edu/ece/" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA
-                    <span class="date-text">(Jan. 2026 – Present)</span>
-                </li>
                 <li>
                     <strong>Development of NextG Wireless Testbeds for Semantic and Goal-Oriented Communication</strong><br>
                     <a href="https://eng.auburn.edu/ece/" target="_blank" class="text-link">Department of Electrical and Computer Engineering</a>, <a href="https://www.auburn.edu/" target="_blank" class="text-link">Auburn University</a>, Auburn, AL, USA
