@@ -86,12 +86,17 @@
         }
 
         .navbar a:not(.navbar-logo) {
-            color: var(--text-muted);
+            color: var(--primary-color);
             text-decoration: none;
             padding: 8px 16px;
-            font-weight: 500;
+            font-weight: 600;
             border-radius: 6px;
             transition: all 0.2s ease;
+        }
+
+        .navbar a.active {
+            color: var(--accent-color);
+            font-weight: 700;
         }
 
         .navbar a:not(.navbar-logo):hover {
@@ -190,6 +195,7 @@
             overflow-wrap: break-word;
         }
 
+        /* Bullet point personalizzato */
         ul.pub-list li::before {
             content: "•";
             color: var(--accent-color);
@@ -203,7 +209,7 @@
             color: var(--text-color);
         }
 
-        /* Stile Liste CV (Brevetti e Progetti) */
+        /* Stile Liste CV */
         ul.cv-list {
             list-style: none;
             padding-left: 0;
@@ -239,7 +245,7 @@
         .date-text {
             color: #64748b;
             font-size: 0.95rem;
-            display: block; 
+            display: block;
             margin-top: 4px;
         }
 
@@ -289,11 +295,6 @@
             ul.pub-list li, ul.cv-list li {
                 text-align: left;
             }
-            .date-text {
-                display: block;
-                margin-left: 0;
-                margin-top: 4px;
-            }
         }
     </style>
 </head>
@@ -304,7 +305,7 @@
 
         <div class="nav-right">
             <a href="index.html" style="color: var(--primary-color); font-weight: 600;">Home</a>
-            <a href="research.html" style="color: var(--accent-color); font-weight: 700;">Research</a>
+            <a href="research.html" class="active">Research</a>
             <a href="cv.html" style="color: var(--primary-color); font-weight: 600;">CV</a>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         </div>
@@ -315,10 +316,10 @@
         <div class="page-header">
             <h1>Research</h1>
         </div>
-        <p class="pub-note">* Authors are listed in alphabetical order unless noted otherwise.</p>
 
         <section id="journal" class="card">
             <h2 class="section-title">Journal Papers</h2>
+            <p class="pub-note">* Authors are listed in alphabetical order unless noted otherwise.</p>
             <ul class="pub-list">
                 <li>Busacca, F., Galluccio, L., Palazzo, S., <strong>Panebianco, A.</strong>, & Raftopoulos, R. (2025). 
                     <a href="https://doi.org/10.1109/TNSM.2025.3629240" target="_blank" class="text-link">
@@ -363,6 +364,7 @@
 
         <section id="conference" class="card">
             <h2 class="section-title">Conference Papers</h2>
+            <p class="pub-note">* Authors are listed in alphabetical order unless noted otherwise.</p>
             <ul class="pub-list">
                 <li>Busacca, F., <strong>Panebianco, A.</strong>, Sun Y. (2026, March). 
                     <a href="https://doi.org/10.1109/GLOBECOM59602.2025.11432193" target="_blank" class="text-link">
@@ -415,7 +417,7 @@
                     In <em>ICC 2023 Workshops — IEEE International Conference on Communications Workshops</em> (pp. 721-726). IEEE.
                 </li>
             </ul>
-        </section>  
+        </section>
 
         <section id="patents" class="card">
             <h2 class="section-title">Patent Applications</h2>
