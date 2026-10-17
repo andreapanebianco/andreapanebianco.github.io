@@ -256,6 +256,16 @@
             margin-left: 4px;
         }
 
+        .presentation-title {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .award-recognition {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
         a.text-link {
             color: var(--accent-color);
             text-decoration: none;
@@ -410,6 +420,28 @@
             </ul>
         </section>
 
+        <!-- Posters and Demonstrations -->
+        <section id="posters-demos" class="card">
+            <h2 class="section-title">Posters and Demonstrations</h2>
+            <ul class="pub-list">
+                <li>Chakraborty, S.<sup>*</sup>, <strong>Panebianco, A.<sup>*</sup></strong>, Tian, Y., Chan, K. S., Dagefu, F., Sun, Y., &amp; Shroff, N. B. (2026, October).
+                    <span class="presentation-title">Distributed Cross-Layer Optimization for Covert Multi-Hop, Multi-Modal Networks: Exponentially Fast Convergence and Robust Tracking</span>.
+                    Poster presented at the <em>MILCOM 2026 — IEEE Military Communications Conference</em>, Young Scholar Workshop, Washington, DC, USA.
+                    <span class="inline-note">[* Co-primary authors]</span>
+                </li>
+                <li>McDowell, C.<sup>*</sup>, <strong>Panebianco, A.<sup>*</sup></strong>, &amp; Sun, Y. (2026, October).
+                    <span class="presentation-title">MetaVIB-Air: An SDR Testbed for Semantic Pedestrian Safety Monitoring</span>.
+                    Demonstration presented at the <em>MILCOM 2026 — IEEE Military Communications Conference</em>, Workshop 7: Quality, Value, and Age of Information for Tactical Networks, Washington, DC, USA.
+                    <span class="inline-note">[* Co-primary authors]</span>
+                </li>
+                <li><strong>Panebianco, A.</strong> (2023, September).
+                    <span class="presentation-title">Characterization of Underwater Acoustic Channel Models for SNR prediction in Real Shallow Water Environment</span>.
+                    Poster presented at the <em>GTTI Annual Meeting 2023</em>, Rome, Italy —
+                    <span class="award-recognition">Winner of the Francesco Carassa Award</span>.
+                </li>
+            </ul>
+        </section>
+
         <section id="patents" class="card">
             <h2 class="section-title">Patent Applications</h2>
             <ul class="cv-list">
@@ -483,8 +515,8 @@
                 toggleButton.textContent = '🌙';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                toggleButton.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '🌙';
             }
         });
     </script>
