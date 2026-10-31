@@ -213,6 +213,17 @@ p {
     color: var(--text-muted);
 }
 
+/* Testo giustificato su tutte le pagine; la sillabazione automatica
+   (lingua inglese, lang="en") evita spazi troppo larghi, anche su mobile */
+p,
+ul.cv-list li,
+ul.pub-list li,
+ul.topic-list li {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
 /* ---------- Home ---------- */
 .profile-name {
     font-size: 2.2rem;
