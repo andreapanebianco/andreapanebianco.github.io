@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research — Andrea Panebianco</title>
 
-    <script src="theme.js?v=3"></script>
+    <script src="theme.js?v=4"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -158,5 +158,27 @@
     <footer>
         &copy; 2026 Andrea Panebianco. All rights reserved.
     </footer>
+    <script>
+        // Evidenzia per un attimo la voce raggiunta da un'etichetta ([J1], [C4], ...)
+        // e toglie l'ancora (#C4) dall'indirizzo: ricaricando la pagina l'evidenziatura
+        // non si ripete, e cliccando di nuovo la stessa etichetta si riaccende.
+        (function () {
+            function highlightTarget(scroll) {
+                const id = decodeURIComponent(location.hash.slice(1));
+                const el = id ? document.getElementById(id) : null;
+                if (el && el.closest('.pub-list')) {
+                    if (scroll) el.scrollIntoView({ block: 'start' });
+                    el.classList.remove('flash');
+                    void el.offsetWidth;   // riavvia l'animazione anche sulla stessa voce
+                    el.classList.add('flash');
+                }
+                if (location.hash) {
+                    history.replaceState(history.state, '', location.pathname + location.search);
+                }
+            }
+            window.addEventListener('hashchange', () => highlightTarget(false));   // clic su un'etichetta
+            window.addEventListener('load', () => highlightTarget(true));          // arrivo da un link esterno (es. dalla pagina CV)
+        })();
+    </script>
 </body>
 </html>
