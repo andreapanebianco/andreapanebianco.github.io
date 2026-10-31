@@ -404,9 +404,15 @@ ul.pub-list.labeled li::before {
     content: none;
 }
 
+/* Voce raggiunta da un'etichetta: evidenziata per un attimo, poi l'evidenziatura svanisce */
 ul.pub-list li:target {
-    background-color: var(--hover-bg);
     border-radius: 6px;
+    animation: target-highlight 2.5s ease-out forwards;
+}
+
+@keyframes target-highlight {
+    0%, 40% { background-color: var(--hover-bg); }
+    100%    { background-color: transparent; }
 }
 
 .pub-label {
