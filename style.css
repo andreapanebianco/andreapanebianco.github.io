@@ -404,8 +404,9 @@ ul.pub-list.labeled li::before {
     content: none;
 }
 
-/* Voce raggiunta da un'etichetta: evidenziata per un attimo, poi l'evidenziatura svanisce */
-ul.pub-list li:target {
+/* Voce raggiunta da un'etichetta: evidenziata per un attimo, poi l'evidenziatura svanisce.
+   La classe "flash" viene aggiunta dallo script in fondo a research.html */
+ul.pub-list li.flash {
     border-radius: 6px;
     animation: target-highlight 2.5s ease-out forwards;
 }
